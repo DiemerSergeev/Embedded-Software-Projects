@@ -1,0 +1,1103 @@
+
+forPCF8575.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  000006da  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000666  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000010  00800100  00800100  000006da  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000006da  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000070c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000148  00000000  00000000  00000748  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001a18  00000000  00000000  00000890  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000ddb  00000000  00000000  000022a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000f4f  00000000  00000000  00003083  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000360  00000000  00000000  00003fd4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000662  00000000  00000000  00004334  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000fa5  00000000  00000000  00004996  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000108  00000000  00000000  0000593b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+   8:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+   c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  10:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  14:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  18:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  1c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  20:	0c 94 85 00 	jmp	0x10a	; 0x10a <__vector_8>
+  24:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  28:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  2c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  30:	0c 94 cb 02 	jmp	0x596	; 0x596 <__vector_12>
+  34:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  38:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  3c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  40:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  44:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  48:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  4c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  50:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  54:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  58:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  5c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  60:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  64:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  68:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  6c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  70:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  74:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  78:	0c 94 f1 02 	jmp	0x5e2	; 0x5e2 <__vector_30>
+  7c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  80:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  84:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  88:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e6 e6       	ldi	r30, 0x66	; 102
+  a0:	f6 e0       	ldi	r31, 0x06	; 6
+  a2:	02 c0       	rjmp	.+4      	; 0xa8 <__do_copy_data+0x10>
+  a4:	05 90       	lpm	r0, Z+
+  a6:	0d 92       	st	X+, r0
+  a8:	a0 30       	cpi	r26, 0x00	; 0
+  aa:	b1 07       	cpc	r27, r17
+  ac:	d9 f7       	brne	.-10     	; 0xa4 <__do_copy_data+0xc>
+
+000000ae <__do_clear_bss>:
+  ae:	21 e0       	ldi	r18, 0x01	; 1
+  b0:	a0 e0       	ldi	r26, 0x00	; 0
+  b2:	b1 e0       	ldi	r27, 0x01	; 1
+  b4:	01 c0       	rjmp	.+2      	; 0xb8 <.do_clear_bss_start>
+
+000000b6 <.do_clear_bss_loop>:
+  b6:	1d 92       	st	X+, r1
+
+000000b8 <.do_clear_bss_start>:
+  b8:	a0 31       	cpi	r26, 0x10	; 16
+  ba:	b2 07       	cpc	r27, r18
+  bc:	e1 f7       	brne	.-8      	; 0xb6 <.do_clear_bss_loop>
+  be:	0e 94 cc 00 	call	0x198	; 0x198 <main>
+  c2:	0c 94 31 03 	jmp	0x662	; 0x662 <_exit>
+
+000000c6 <__bad_interrupt>:
+  c6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ca <I2C_INIT>:
+MAX для кварца 8 МГц - 500000 Гц
+MAX для кварца 16 МГц - 1000000 Гц
+-------------------------------------------------------------------------------------------*/
+void I2C_INIT(void)
+{
+	DDRC|=0b00000011;	// SDA - PC1, SCL - PC0 на выход
+  ca:	84 b3       	in	r24, 0x14	; 20
+  cc:	83 60       	ori	r24, 0x03	; 3
+  ce:	84 bb       	out	0x14, r24	; 20
+	
+	TWSR &= (0<<TWPS0)|(0<<TWPS0); // биты предделителя настроены на 1
+  d0:	e1 e7       	ldi	r30, 0x71	; 113
+  d2:	f0 e0       	ldi	r31, 0x00	; 0
+  d4:	80 81       	ld	r24, Z
+  d6:	10 82       	st	Z, r1
+	TWBR=0x48;                     //Настраиваем частоту шины на 50 кГц
+  d8:	88 e4       	ldi	r24, 0x48	; 72
+  da:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <__TEXT_REGION_LENGTH__+0x7f0070>
+  de:	08 95       	ret
+
+000000e0 <Port_init>:
+		_delay_ms(200);
+		ERROR_LED_OFF;
+		_delay_ms(200);		
+	}
+	
+}
+  e0:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <__TEXT_REGION_LENGTH__+0x7f0062>
+  e4:	8c e0       	ldi	r24, 0x0C	; 12
+  e6:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <__TEXT_REGION_LENGTH__+0x7f0061>
+  ea:	18 ba       	out	0x18, r1	; 24
+  ec:	80 ee       	ldi	r24, 0xE0	; 224
+  ee:	87 bb       	out	0x17, r24	; 23
+  f0:	13 b8       	out	0x03, r1	; 3
+  f2:	12 b8       	out	0x02, r1	; 2
+  f4:	08 95       	ret
+
+000000f6 <INT_ini>:
+  f6:	8a b7       	in	r24, 0x3a	; 58
+  f8:	80 6c       	ori	r24, 0xC0	; 192
+  fa:	8a bf       	out	0x3a, r24	; 58
+  fc:	89 b7       	in	r24, 0x39	; 57
+  fe:	80 68       	ori	r24, 0x80	; 128
+ 100:	89 bf       	out	0x39, r24	; 57
+ 102:	88 b7       	in	r24, 0x38	; 56
+ 104:	80 68       	ori	r24, 0x80	; 128
+ 106:	88 bf       	out	0x38, r24	; 56
+ 108:	08 95       	ret
+
+0000010a <__vector_8>:
+ 10a:	1f 92       	push	r1
+ 10c:	0f 92       	push	r0
+ 10e:	0f b6       	in	r0, 0x3f	; 63
+ 110:	0f 92       	push	r0
+ 112:	11 24       	eor	r1, r1
+ 114:	8f 93       	push	r24
+ 116:	9f 93       	push	r25
+ 118:	f8 94       	cli
+ 11a:	88 b3       	in	r24, 0x18	; 24
+ 11c:	8f 79       	andi	r24, 0x9F	; 159
+ 11e:	88 bb       	out	0x18, r24	; 24
+ 120:	0f 9b       	sbis	0x01, 7	; 1
+ 122:	2f c0       	rjmp	.+94     	; 0x182 <__vector_8+0x78>
+ 124:	8f e7       	ldi	r24, 0x7F	; 127
+ 126:	9e e3       	ldi	r25, 0x3E	; 62
+ 128:	01 97       	sbiw	r24, 0x01	; 1
+ 12a:	f1 f7       	brne	.-4      	; 0x128 <__vector_8+0x1e>
+ 12c:	00 c0       	rjmp	.+0      	; 0x12e <__vector_8+0x24>
+ 12e:	00 00       	nop
+ 130:	0f 9b       	sbis	0x01, 7	; 1
+ 132:	27 c0       	rjmp	.+78     	; 0x182 <__vector_8+0x78>
+ 134:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__data_end+0x1>
+ 138:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_end>
+ 13c:	20 c0       	rjmp	.+64     	; 0x17e <__vector_8+0x74>
+ 13e:	b4 9b       	sbis	0x16, 4	; 22
+ 140:	1d c0       	rjmp	.+58     	; 0x17c <__vector_8+0x72>
+ 142:	8f e0       	ldi	r24, 0x0F	; 15
+ 144:	97 e2       	ldi	r25, 0x27	; 39
+ 146:	01 97       	sbiw	r24, 0x01	; 1
+ 148:	f1 f7       	brne	.-4      	; 0x146 <__vector_8+0x3c>
+ 14a:	00 c0       	rjmp	.+0      	; 0x14c <__vector_8+0x42>
+ 14c:	00 00       	nop
+ 14e:	b4 9b       	sbis	0x16, 4	; 22
+ 150:	13 c0       	rjmp	.+38     	; 0x178 <__vector_8+0x6e>
+ 152:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
+ 156:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
+ 15a:	01 96       	adiw	r24, 0x01	; 1
+ 15c:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__data_end+0x1>
+ 160:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_end>
+ 164:	88 b3       	in	r24, 0x18	; 24
+ 166:	80 68       	ori	r24, 0x80	; 128
+ 168:	88 bb       	out	0x18, r24	; 24
+ 16a:	06 c0       	rjmp	.+12     	; 0x178 <__vector_8+0x6e>
+ 16c:	8f e0       	ldi	r24, 0x0F	; 15
+ 16e:	97 e2       	ldi	r25, 0x27	; 39
+ 170:	01 97       	sbiw	r24, 0x01	; 1
+ 172:	f1 f7       	brne	.-4      	; 0x170 <__vector_8+0x66>
+ 174:	00 c0       	rjmp	.+0      	; 0x176 <__vector_8+0x6c>
+ 176:	00 00       	nop
+ 178:	b4 99       	sbic	0x16, 4	; 22
+ 17a:	f8 cf       	rjmp	.-16     	; 0x16c <__vector_8+0x62>
+ 17c:	00 00       	nop
+ 17e:	0f 99       	sbic	0x01, 7	; 1
+ 180:	de cf       	rjmp	.-68     	; 0x13e <__vector_8+0x34>
+ 182:	88 b7       	in	r24, 0x38	; 56
+ 184:	80 68       	ori	r24, 0x80	; 128
+ 186:	88 bf       	out	0x38, r24	; 56
+ 188:	78 94       	sei
+ 18a:	9f 91       	pop	r25
+ 18c:	8f 91       	pop	r24
+ 18e:	0f 90       	pop	r0
+ 190:	0f be       	out	0x3f, r0	; 63
+ 192:	0f 90       	pop	r0
+ 194:	1f 90       	pop	r1
+ 196:	18 95       	reti
+
+00000198 <main>:
+
+int main(void)
+{
+	/*---------------Инициализация и настройки периферии---------------------*/
+	uint8_t k;
+	Port_init();
+ 198:	0e 94 70 00 	call	0xe0	; 0xe0 <Port_init>
+	ERROR_LED_ON;
+ 19c:	c2 e6       	ldi	r28, 0x62	; 98
+ 19e:	d0 e0       	ldi	r29, 0x00	; 0
+ 1a0:	88 81       	ld	r24, Y
+ 1a2:	88 60       	ori	r24, 0x08	; 8
+ 1a4:	88 83       	st	Y, r24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1a6:	2f ef       	ldi	r18, 0xFF	; 255
+ 1a8:	80 e7       	ldi	r24, 0x70	; 112
+ 1aa:	92 e0       	ldi	r25, 0x02	; 2
+ 1ac:	21 50       	subi	r18, 0x01	; 1
+ 1ae:	80 40       	sbci	r24, 0x00	; 0
+ 1b0:	90 40       	sbci	r25, 0x00	; 0
+ 1b2:	e1 f7       	brne	.-8      	; 0x1ac <main+0x14>
+ 1b4:	00 c0       	rjmp	.+0      	; 0x1b6 <main+0x1e>
+ 1b6:	00 00       	nop
+	_delay_ms(100);
+	ERROR_TO_FORMULA;  // не готов принимать команды от формулы
+ 1b8:	88 b3       	in	r24, 0x18	; 24
+ 1ba:	8f 79       	andi	r24, 0x9F	; 159
+ 1bc:	88 bb       	out	0x18, r24	; 24
+	ERROR_LED_OFF;
+ 1be:	88 81       	ld	r24, Y
+ 1c0:	87 7f       	andi	r24, 0xF7	; 247
+ 1c2:	88 83       	st	Y, r24
+	BOOT_LED_ON;
+ 1c4:	88 b3       	in	r24, 0x18	; 24
+ 1c6:	80 68       	ori	r24, 0x80	; 128
+ 1c8:	88 bb       	out	0x18, r24	; 24
+	INT_ini();						//Инициализируем прерывания
+ 1ca:	0e 94 7b 00 	call	0xf6	; 0xf6 <INT_ini>
+		
+	I2C_INIT();
+ 1ce:	0e 94 65 00 	call	0xca	; 0xca <I2C_INIT>
+	//UART_init(9600); 
+//	UART_Transmit_Str("START",1);
+	//UART_Transmit_Hex(I2C_COMAND(I2C_START));
+	ERROR_LED_ON;
+ 1d2:	88 81       	ld	r24, Y
+ 1d4:	88 60       	ori	r24, 0x08	; 8
+ 1d6:	88 83       	st	Y, r24
+	//	WRITE_REGISTER(0xAA55);
+	// READ_REGISTER();		
+	}
+	*/
+		
+	ERROR_LED_OFF;
+ 1d8:	88 81       	ld	r24, Y
+ 1da:	87 7f       	andi	r24, 0xF7	; 247
+ 1dc:	88 83       	st	Y, r24
+//	_delay_ms(100);
+	BOOT_LED_OFF;
+ 1de:	88 b3       	in	r24, 0x18	; 24
+ 1e0:	8f 77       	andi	r24, 0x7F	; 127
+ 1e2:	88 bb       	out	0x18, r24	; 24
+	OK_LED_ON;
+ 1e4:	88 81       	ld	r24, Y
+ 1e6:	84 60       	ori	r24, 0x04	; 4
+ 1e8:	88 83       	st	Y, r24
+	count=0;
+ 1ea:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__data_end+0x1>
+ 1ee:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_end>
+    	//----------------------------------------------- Основной цикл-----------------------------------------------
+    while(1)					   // Бесконечный цикл
+    {
+	    	//----------Режим0-----------
+			
+	    	if (count==0)              // Режим 0 мк не работает
+ 1f2:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
+ 1f6:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
+ 1fa:	89 2b       	or	r24, r25
+ 1fc:	09 f0       	breq	.+2      	; 0x200 <main+0x68>
+ 1fe:	43 c0       	rjmp	.+134    	; 0x286 <main+0xee>
+	    	{	    		      	
+		    	Ready_ON; // data2 = 1 // Мы готовы принять данные от формулы
+ 200:	88 b3       	in	r24, 0x18	; 24
+ 202:	80 64       	ori	r24, 0x40	; 64
+ 204:	88 bb       	out	0x18, r24	; 24
+				sei();          
+ 206:	78 94       	sei
+				      
+		    	while (count==0)
+ 208:	37 c0       	rjmp	.+110    	; 0x278 <main+0xe0>
+		    	{
+			    	asm("nop");
+ 20a:	00 00       	nop
+			    	asm("nop");
+ 20c:	00 00       	nop
+					//UART_Transmit_Str("state1",1);
+					OK_LED_ON;
+ 20e:	e2 e6       	ldi	r30, 0x62	; 98
+ 210:	f0 e0       	ldi	r31, 0x00	; 0
+ 212:	80 81       	ld	r24, Z
+ 214:	84 60       	ori	r24, 0x04	; 4
+ 216:	80 83       	st	Z, r24
+					k=0;   
+ 218:	80 e0       	ldi	r24, 0x00	; 0
+					while ((count==0)&&(k<40))
+ 21a:	07 c0       	rjmp	.+14     	; 0x22a <main+0x92>
+ 21c:	ef e0       	ldi	r30, 0x0F	; 15
+ 21e:	f7 e2       	ldi	r31, 0x27	; 39
+ 220:	31 97       	sbiw	r30, 0x01	; 1
+ 222:	f1 f7       	brne	.-4      	; 0x220 <main+0x88>
+ 224:	00 c0       	rjmp	.+0      	; 0x226 <main+0x8e>
+ 226:	00 00       	nop
+					{
+					 _delay_ms(5);
+					 k++;
+ 228:	8f 5f       	subi	r24, 0xFF	; 255
+			    	asm("nop");
+			    	asm("nop");
+					//UART_Transmit_Str("state1",1);
+					OK_LED_ON;
+					k=0;   
+					while ((count==0)&&(k<40))
+ 22a:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__data_end>
+ 22e:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__data_end+0x1>
+ 232:	23 2b       	or	r18, r19
+ 234:	11 f4       	brne	.+4      	; 0x23a <main+0xa2>
+ 236:	88 32       	cpi	r24, 0x28	; 40
+ 238:	88 f3       	brcs	.-30     	; 0x21c <main+0x84>
+					{
+					 _delay_ms(5);
+					 k++;
+					}
+					//_delay_ms(200);
+					OK_LED_OFF;
+ 23a:	e2 e6       	ldi	r30, 0x62	; 98
+ 23c:	f0 e0       	ldi	r31, 0x00	; 0
+ 23e:	80 81       	ld	r24, Z
+ 240:	8b 7f       	andi	r24, 0xFB	; 251
+ 242:	80 83       	st	Z, r24
+					k=0;
+ 244:	90 e0       	ldi	r25, 0x00	; 0
+					while ((count==0)&(k<40))
+ 246:	07 c0       	rjmp	.+14     	; 0x256 <main+0xbe>
+ 248:	ef e0       	ldi	r30, 0x0F	; 15
+ 24a:	f7 e2       	ldi	r31, 0x27	; 39
+ 24c:	31 97       	sbiw	r30, 0x01	; 1
+ 24e:	f1 f7       	brne	.-4      	; 0x24c <main+0xb4>
+ 250:	00 c0       	rjmp	.+0      	; 0x252 <main+0xba>
+ 252:	00 00       	nop
+					{
+						_delay_ms(5);
+						k++;
+ 254:	9f 5f       	subi	r25, 0xFF	; 255
+					 k++;
+					}
+					//_delay_ms(200);
+					OK_LED_OFF;
+					k=0;
+					while ((count==0)&(k<40))
+ 256:	40 91 00 01 	lds	r20, 0x0100	; 0x800100 <__data_end>
+ 25a:	50 91 01 01 	lds	r21, 0x0101	; 0x800101 <__data_end+0x1>
+ 25e:	21 e0       	ldi	r18, 0x01	; 1
+ 260:	41 15       	cp	r20, r1
+ 262:	51 05       	cpc	r21, r1
+ 264:	09 f0       	breq	.+2      	; 0x268 <main+0xd0>
+ 266:	20 e0       	ldi	r18, 0x00	; 0
+ 268:	81 e0       	ldi	r24, 0x01	; 1
+ 26a:	98 32       	cpi	r25, 0x28	; 40
+ 26c:	08 f0       	brcs	.+2      	; 0x270 <main+0xd8>
+ 26e:	80 e0       	ldi	r24, 0x00	; 0
+ 270:	82 23       	and	r24, r18
+ 272:	51 f7       	brne	.-44     	; 0x248 <main+0xb0>
+						_delay_ms(5);
+						k++;
+					}
+					//_delay_ms(200);
+					//UART_Transmit_Hex(I2C_COMAND(I2C_START));
+			    	if(count!=0) break;
+ 274:	45 2b       	or	r20, r21
+ 276:	39 f4       	brne	.+14     	; 0x286 <main+0xee>
+	    	if (count==0)              // Режим 0 мк не работает
+	    	{	    		      	
+		    	Ready_ON; // data2 = 1 // Мы готовы принять данные от формулы
+				sei();          
+				      
+		    	while (count==0)
+ 278:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
+ 27c:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
+ 280:	89 2b       	or	r24, r25
+ 282:	09 f4       	brne	.+2      	; 0x286 <main+0xee>
+ 284:	c2 cf       	rjmp	.-124    	; 0x20a <main+0x72>
+			    	if(count!=0) break;
+		    	}
+	    	}
+	    	
+	    	//----------Режим1-----------
+	    	if (count==1)			 // Режим 1, выставляем порты в низкий ур   
+ 286:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
+ 28a:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
+ 28e:	01 97       	sbiw	r24, 0x01	; 1
+ 290:	69 f4       	brne	.+26     	; 0x2ac <main+0x114>
+	    	{
+				cli();
+ 292:	f8 94       	cli
+				BOOT_LED_OFF;
+ 294:	88 b3       	in	r24, 0x18	; 24
+ 296:	8f 77       	andi	r24, 0x7F	; 127
+ 298:	88 bb       	out	0x18, r24	; 24
+				WRITE_REGISTER(0x0000);
+ 29a:	80 e0       	ldi	r24, 0x00	; 0
+ 29c:	90 e0       	ldi	r25, 0x00	; 0
+ 29e:	0e 94 66 02 	call	0x4cc	; 0x4cc <WRITE_REGISTER>
+				//blink(count) ;	
+				count=0;
+ 2a2:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__data_end+0x1>
+ 2a6:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_end>
+				sei();
+ 2aa:	78 94       	sei
+	    	}
+
+	    	//----------Режим2-----------
+	    	if (count==2)              // Режим 2, выставить порты в высокий уровень
+ 2ac:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
+ 2b0:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
+ 2b4:	02 97       	sbiw	r24, 0x02	; 2
+ 2b6:	69 f4       	brne	.+26     	; 0x2d2 <main+0x13a>
+	    	{
+				cli();
+ 2b8:	f8 94       	cli
+				BOOT_LED_OFF;
+ 2ba:	88 b3       	in	r24, 0x18	; 24
+ 2bc:	8f 77       	andi	r24, 0x7F	; 127
+ 2be:	88 bb       	out	0x18, r24	; 24
+				//blink(count) ;	
+				WRITE_REGISTER(0xFFFF);	 
+ 2c0:	8f ef       	ldi	r24, 0xFF	; 255
+ 2c2:	9f ef       	ldi	r25, 0xFF	; 255
+ 2c4:	0e 94 66 02 	call	0x4cc	; 0x4cc <WRITE_REGISTER>
+		    	count=0;
+ 2c8:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__data_end+0x1>
+ 2cc:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_end>
+				sei();
+ 2d0:	78 94       	sei
+	    	}
+	    	
+	    	//----------Режим3-----------
+	    	if (count==3)              // Режим 3 читаем два регистора из порта
+ 2d2:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
+ 2d6:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
+ 2da:	03 97       	sbiw	r24, 0x03	; 3
+ 2dc:	09 f0       	breq	.+2      	; 0x2e0 <main+0x148>
+ 2de:	41 c0       	rjmp	.+130    	; 0x362 <main+0x1ca>
+	    	{
+				cli();
+ 2e0:	f8 94       	cli
+				ERROR_TO_FORMULA;
+ 2e2:	88 b3       	in	r24, 0x18	; 24
+ 2e4:	8f 79       	andi	r24, 0x9F	; 159
+ 2e6:	88 bb       	out	0x18, r24	; 24
+				//blink(count) ;	
+				WRITE_REGISTER(0xFFFF);	 // перед чтением записать в PCF8575 единицы
+ 2e8:	8f ef       	ldi	r24, 0xFF	; 255
+ 2ea:	9f ef       	ldi	r25, 0xFF	; 255
+ 2ec:	0e 94 66 02 	call	0x4cc	; 0x4cc <WRITE_REGISTER>
+ 2f0:	8f e1       	ldi	r24, 0x1F	; 31
+ 2f2:	9e e4       	ldi	r25, 0x4E	; 78
+ 2f4:	01 97       	sbiw	r24, 0x01	; 1
+ 2f6:	f1 f7       	brne	.-4      	; 0x2f4 <main+0x15c>
+ 2f8:	00 c0       	rjmp	.+0      	; 0x2fa <main+0x162>
+ 2fa:	00 00       	nop
+				_delay_ms(10);	
+				uint16_t data = 1;	
+				data = READ_REGISTER();	
+ 2fc:	0e 94 33 02 	call	0x466	; 0x466 <READ_REGISTER>
+				count = 0;
+ 300:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__data_end+0x1>
+ 304:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_end>
+				BOOT_LED_OFF;
+ 308:	28 b3       	in	r18, 0x18	; 24
+ 30a:	2f 77       	andi	r18, 0x7F	; 127
+ 30c:	28 bb       	out	0x18, r18	; 24
+				if (data == 0xFFFF)   // должны выставить формулой низкие уровни на ногах
+ 30e:	01 96       	adiw	r24, 0x01	; 1
+ 310:	b1 f4       	brne	.+44     	; 0x33e <main+0x1a6>
+				{
+				
+					DATA_1_H;
+ 312:	88 b3       	in	r24, 0x18	; 24
+ 314:	80 62       	ori	r24, 0x20	; 32
+ 316:	88 bb       	out	0x18, r24	; 24
+ 318:	8f e1       	ldi	r24, 0x1F	; 31
+ 31a:	9e e4       	ldi	r25, 0x4E	; 78
+ 31c:	01 97       	sbiw	r24, 0x01	; 1
+ 31e:	f1 f7       	brne	.-4      	; 0x31c <main+0x184>
+ 320:	00 c0       	rjmp	.+0      	; 0x322 <main+0x18a>
+ 322:	00 00       	nop
+					_delay_ms(10);
+					DATA_2_L;
+ 324:	88 b3       	in	r24, 0x18	; 24
+ 326:	8f 7b       	andi	r24, 0xBF	; 191
+ 328:	88 bb       	out	0x18, r24	; 24
+					while ((PINB&0b00010000)) _delay_ms(5); //ждем низкого на  Pb4 на лог 1
+ 32a:	06 c0       	rjmp	.+12     	; 0x338 <main+0x1a0>
+ 32c:	ef e0       	ldi	r30, 0x0F	; 15
+ 32e:	f7 e2       	ldi	r31, 0x27	; 39
+ 330:	31 97       	sbiw	r30, 0x01	; 1
+ 332:	f1 f7       	brne	.-4      	; 0x330 <main+0x198>
+ 334:	00 c0       	rjmp	.+0      	; 0x336 <main+0x19e>
+ 336:	00 00       	nop
+ 338:	b4 99       	sbic	0x16, 4	; 22
+ 33a:	f8 cf       	rjmp	.-16     	; 0x32c <main+0x194>
+ 33c:	11 c0       	rjmp	.+34     	; 0x360 <main+0x1c8>
+					
+				}
+				else
+				{
+					ERROR_TO_FORMULA;  // both data1 and 2 = 0
+ 33e:	88 b3       	in	r24, 0x18	; 24
+ 340:	8f 79       	andi	r24, 0x9F	; 159
+ 342:	88 bb       	out	0x18, r24	; 24
+					ERROR_LED_ON;
+ 344:	e2 e6       	ldi	r30, 0x62	; 98
+ 346:	f0 e0       	ldi	r31, 0x00	; 0
+ 348:	80 81       	ld	r24, Z
+ 34a:	88 60       	ori	r24, 0x08	; 8
+ 34c:	80 83       	st	Z, r24
+					while ((PINB&0b00010000)) _delay_ms(5); //проверяем  Pb4 на лог 1
+ 34e:	06 c0       	rjmp	.+12     	; 0x35c <main+0x1c4>
+ 350:	8f e0       	ldi	r24, 0x0F	; 15
+ 352:	97 e2       	ldi	r25, 0x27	; 39
+ 354:	01 97       	sbiw	r24, 0x01	; 1
+ 356:	f1 f7       	brne	.-4      	; 0x354 <main+0x1bc>
+ 358:	00 c0       	rjmp	.+0      	; 0x35a <main+0x1c2>
+ 35a:	00 00       	nop
+ 35c:	b4 99       	sbic	0x16, 4	; 22
+ 35e:	f8 cf       	rjmp	.-16     	; 0x350 <main+0x1b8>
+				}
+				 
+				sei();
+ 360:	78 94       	sei
+	    	}
+			//----------Режим4-----------
+			if (count==4)              // Режим 3 читаем два регистора из порта
+ 362:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
+ 366:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
+ 36a:	04 97       	sbiw	r24, 0x04	; 4
+ 36c:	d9 f5       	brne	.+118    	; 0x3e4 <main+0x24c>
+			{
+				cli();
+ 36e:	f8 94       	cli
+				ERROR_TO_FORMULA;// both data =0
+ 370:	88 b3       	in	r24, 0x18	; 24
+ 372:	8f 79       	andi	r24, 0x9F	; 159
+ 374:	88 bb       	out	0x18, r24	; 24
+				WRITE_REGISTER(0xFFFF);
+ 376:	8f ef       	ldi	r24, 0xFF	; 255
+ 378:	9f ef       	ldi	r25, 0xFF	; 255
+ 37a:	0e 94 66 02 	call	0x4cc	; 0x4cc <WRITE_REGISTER>
+				uint16_t data = 1;
+				data = READ_REGISTER();
+ 37e:	0e 94 33 02 	call	0x466	; 0x466 <READ_REGISTER>
+				count = 0;
+ 382:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__data_end+0x1>
+ 386:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_end>
+				BOOT_LED_OFF;
+ 38a:	28 b3       	in	r18, 0x18	; 24
+ 38c:	2f 77       	andi	r18, 0x7F	; 127
+ 38e:	28 bb       	out	0x18, r18	; 24
+				if (data == 0x0000)   // должны выставить формулой такие уровни на ногах
+ 390:	89 2b       	or	r24, r25
+ 392:	b1 f4       	brne	.+44     	; 0x3c0 <main+0x228>
+				{
+					DATA_2_H ;
+ 394:	88 b3       	in	r24, 0x18	; 24
+ 396:	80 64       	ori	r24, 0x40	; 64
+ 398:	88 bb       	out	0x18, r24	; 24
+ 39a:	ef e1       	ldi	r30, 0x1F	; 31
+ 39c:	fe e4       	ldi	r31, 0x4E	; 78
+ 39e:	31 97       	sbiw	r30, 0x01	; 1
+ 3a0:	f1 f7       	brne	.-4      	; 0x39e <main+0x206>
+ 3a2:	00 c0       	rjmp	.+0      	; 0x3a4 <main+0x20c>
+ 3a4:	00 00       	nop
+					_delay_ms(10);
+					DATA_1_H;
+ 3a6:	88 b3       	in	r24, 0x18	; 24
+ 3a8:	80 62       	ori	r24, 0x20	; 32
+ 3aa:	88 bb       	out	0x18, r24	; 24
+					while ((PINB&0b00010000)) _delay_ms(5); //проверяем  Pb4 на лог 1
+ 3ac:	06 c0       	rjmp	.+12     	; 0x3ba <main+0x222>
+ 3ae:	8f e0       	ldi	r24, 0x0F	; 15
+ 3b0:	97 e2       	ldi	r25, 0x27	; 39
+ 3b2:	01 97       	sbiw	r24, 0x01	; 1
+ 3b4:	f1 f7       	brne	.-4      	; 0x3b2 <main+0x21a>
+ 3b6:	00 c0       	rjmp	.+0      	; 0x3b8 <main+0x220>
+ 3b8:	00 00       	nop
+ 3ba:	b4 99       	sbic	0x16, 4	; 22
+ 3bc:	f8 cf       	rjmp	.-16     	; 0x3ae <main+0x216>
+ 3be:	11 c0       	rjmp	.+34     	; 0x3e2 <main+0x24a>
+				}
+				else
+				{
+					ERROR_TO_FORMULA;
+ 3c0:	88 b3       	in	r24, 0x18	; 24
+ 3c2:	8f 79       	andi	r24, 0x9F	; 159
+ 3c4:	88 bb       	out	0x18, r24	; 24
+					ERROR_LED_ON;
+ 3c6:	e2 e6       	ldi	r30, 0x62	; 98
+ 3c8:	f0 e0       	ldi	r31, 0x00	; 0
+ 3ca:	80 81       	ld	r24, Z
+ 3cc:	88 60       	ori	r24, 0x08	; 8
+ 3ce:	80 83       	st	Z, r24
+					while ((PINB&0b00010000)) _delay_ms(5); //проверяем  Pb4 на лог 1
+ 3d0:	06 c0       	rjmp	.+12     	; 0x3de <main+0x246>
+ 3d2:	ef e0       	ldi	r30, 0x0F	; 15
+ 3d4:	f7 e2       	ldi	r31, 0x27	; 39
+ 3d6:	31 97       	sbiw	r30, 0x01	; 1
+ 3d8:	f1 f7       	brne	.-4      	; 0x3d6 <main+0x23e>
+ 3da:	00 c0       	rjmp	.+0      	; 0x3dc <main+0x244>
+ 3dc:	00 00       	nop
+ 3de:	b4 99       	sbic	0x16, 4	; 22
+ 3e0:	f8 cf       	rjmp	.-16     	; 0x3d2 <main+0x23a>
+				}
+				sei();
+ 3e2:	78 94       	sei
+			}
+	    	
+	    	//----------Ошибки-----------
+	    	if (count>4)              // Обработчик ошибок если от формулы пришла команда больше 11
+ 3e4:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
+ 3e8:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
+ 3ec:	05 97       	sbiw	r24, 0x05	; 5
+ 3ee:	0c f4       	brge	.+2      	; 0x3f2 <main+0x25a>
+ 3f0:	00 cf       	rjmp	.-512    	; 0x1f2 <main+0x5a>
+	    	{
+		    	cli();
+ 3f2:	f8 94       	cli
+		    	ERROR_LED_ON;
+ 3f4:	e2 e6       	ldi	r30, 0x62	; 98
+ 3f6:	f0 e0       	ldi	r31, 0x00	; 0
+ 3f8:	80 81       	ld	r24, Z
+ 3fa:	88 60       	ori	r24, 0x08	; 8
+ 3fc:	80 83       	st	Z, r24
+		    	sei();
+ 3fe:	78 94       	sei
+ 400:	f8 ce       	rjmp	.-528    	; 0x1f2 <main+0x5a>
+
+00000402 <I2C_COMAND>:
+	
+	return (data);                     // (должно вернуться 0x01)
+}
+
+uint8_t I2C_COMAND(uint8_t action){
+	switch(action){
+ 402:	82 30       	cpi	r24, 0x02	; 2
+ 404:	59 f0       	breq	.+22     	; 0x41c <I2C_COMAND+0x1a>
+ 406:	30 f0       	brcs	.+12     	; 0x414 <I2C_COMAND+0x12>
+ 408:	84 30       	cpi	r24, 0x04	; 4
+ 40a:	81 f0       	breq	.+32     	; 0x42c <I2C_COMAND+0x2a>
+ 40c:	58 f0       	brcs	.+22     	; 0x424 <I2C_COMAND+0x22>
+ 40e:	85 30       	cpi	r24, 0x05	; 5
+ 410:	89 f0       	breq	.+34     	; 0x434 <I2C_COMAND+0x32>
+ 412:	13 c0       	rjmp	.+38     	; 0x43a <I2C_COMAND+0x38>
+		case I2C_START:
+		case I2C_RESTART:
+		TWCR = _BV(TWSTA) | _BV(TWEN) | _BV(TWINT);// Если нужно прерывание | _BV(TWIE);
+ 414:	94 ea       	ldi	r25, 0xA4	; 164
+ 416:	90 93 74 00 	sts	0x0074, r25	; 0x800074 <__TEXT_REGION_LENGTH__+0x7f0074>
+		break;
+ 41a:	0f c0       	rjmp	.+30     	; 0x43a <I2C_COMAND+0x38>
+		case I2C_STOP:
+		TWCR = _BV(TWSTO) | _BV(TWEN) | _BV(TWINT);// | _BV(TWIE);
+ 41c:	94 e9       	ldi	r25, 0x94	; 148
+ 41e:	90 93 74 00 	sts	0x0074, r25	; 0x800074 <__TEXT_REGION_LENGTH__+0x7f0074>
+		break;
+ 422:	0b c0       	rjmp	.+22     	; 0x43a <I2C_COMAND+0x38>
+		case I2C_TRANSMIT:
+		TWCR = _BV(TWEN) | _BV(TWINT);// | _BV(TWIE);
+ 424:	94 e8       	ldi	r25, 0x84	; 132
+ 426:	90 93 74 00 	sts	0x0074, r25	; 0x800074 <__TEXT_REGION_LENGTH__+0x7f0074>
+		break;
+ 42a:	07 c0       	rjmp	.+14     	; 0x43a <I2C_COMAND+0x38>
+		case I2C_RECEIVE_ACK:
+		TWCR = _BV(TWEN) | _BV(TWINT) | _BV(TWEA);//| _BV(TWIE);
+ 42c:	94 ec       	ldi	r25, 0xC4	; 196
+ 42e:	90 93 74 00 	sts	0x0074, r25	; 0x800074 <__TEXT_REGION_LENGTH__+0x7f0074>
+		break;
+ 432:	03 c0       	rjmp	.+6      	; 0x43a <I2C_COMAND+0x38>
+		case I2C_RECEIVE_NACK:
+		TWCR = _BV(TWEN) | _BV(TWINT);// | _BV(TWIE);
+ 434:	94 e8       	ldi	r25, 0x84	; 132
+ 436:	90 93 74 00 	sts	0x0074, r25	; 0x800074 <__TEXT_REGION_LENGTH__+0x7f0074>
+		break;
+	}
+	uint8_t k=0;
+	if(action != I2C_STOP){
+ 43a:	82 30       	cpi	r24, 0x02	; 2
+ 43c:	49 f4       	brne	.+18     	; 0x450 <I2C_COMAND+0x4e>
+ 43e:	0f c0       	rjmp	.+30     	; 0x45e <I2C_COMAND+0x5c>
+ 440:	ef e9       	ldi	r30, 0x9F	; 159
+ 442:	ff e0       	ldi	r31, 0x0F	; 15
+ 444:	31 97       	sbiw	r30, 0x01	; 1
+ 446:	f1 f7       	brne	.-4      	; 0x444 <I2C_COMAND+0x42>
+ 448:	00 c0       	rjmp	.+0      	; 0x44a <I2C_COMAND+0x48>
+ 44a:	00 00       	nop
+		 while ((!(TWCR & _BV(TWINT))) || (k<40))
+		 {
+			 _delay_ms(2);
+			 k++;
+ 44c:	8f 5f       	subi	r24, 0xFF	; 255
+ 44e:	01 c0       	rjmp	.+2      	; 0x452 <I2C_COMAND+0x50>
+ 450:	80 e0       	ldi	r24, 0x00	; 0
+		TWCR = _BV(TWEN) | _BV(TWINT);// | _BV(TWIE);
+		break;
+	}
+	uint8_t k=0;
+	if(action != I2C_STOP){
+		 while ((!(TWCR & _BV(TWINT))) || (k<40))
+ 452:	90 91 74 00 	lds	r25, 0x0074	; 0x800074 <__TEXT_REGION_LENGTH__+0x7f0074>
+ 456:	99 23       	and	r25, r25
+ 458:	9c f7       	brge	.-26     	; 0x440 <I2C_COMAND+0x3e>
+ 45a:	88 32       	cpi	r24, 0x28	; 40
+ 45c:	88 f3       	brcs	.-30     	; 0x440 <I2C_COMAND+0x3e>
+		 {
+			 _delay_ms(2);
+			 k++;
+		 }
+	}
+	return (TWSR & 0xF8);
+ 45e:	80 91 71 00 	lds	r24, 0x0071	; 0x800071 <__TEXT_REGION_LENGTH__+0x7f0071>
+ 462:	88 7f       	andi	r24, 0xF8	; 248
+ 464:	08 95       	ret
+
+00000466 <READ_REGISTER>:
+
+
+
+
+uint16_t READ_REGISTER(void)
+{
+ 466:	0f 93       	push	r16
+ 468:	1f 93       	push	r17
+ 46a:	cf 93       	push	r28
+ 46c:	df 93       	push	r29
+ 46e:	8f e1       	ldi	r24, 0x1F	; 31
+ 470:	9e e4       	ldi	r25, 0x4E	; 78
+ 472:	01 97       	sbiw	r24, 0x01	; 1
+ 474:	f1 f7       	brne	.-4      	; 0x472 <READ_REGISTER+0xc>
+ 476:	00 c0       	rjmp	.+0      	; 0x478 <READ_REGISTER+0x12>
+ 478:	00 00       	nop
+	uint16_t data=0;
+	_delay_ms(10);
+
+	I2C_COMAND(I2C_START);       // формируем сигнал START
+ 47a:	80 e0       	ldi	r24, 0x00	; 0
+ 47c:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+
+		TWDR=READ_CMD;                // Загружаем адрес запроса ID
+ 480:	03 e7       	ldi	r16, 0x73	; 115
+ 482:	10 e0       	ldi	r17, 0x00	; 0
+ 484:	81 e4       	ldi	r24, 0x41	; 65
+ 486:	f8 01       	movw	r30, r16
+ 488:	80 83       	st	Z, r24
+		I2C_COMAND(I2C_TRANSMIT);    // Передаем
+ 48a:	83 e0       	ldi	r24, 0x03	; 3
+ 48c:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+				
+		I2C_COMAND(I2C_RECEIVE_ACK);    // Принимаем младший байт
+ 490:	84 e0       	ldi	r24, 0x04	; 4
+ 492:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+		data=TWDR;
+ 496:	f8 01       	movw	r30, r16
+ 498:	c0 81       	ld	r28, Z
+ 49a:	d0 e0       	ldi	r29, 0x00	; 0
+		
+		I2C_COMAND(I2C_RECEIVE_NACK);    // Принимаем старший байт
+ 49c:	85 e0       	ldi	r24, 0x05	; 5
+ 49e:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+		data=data<<8;
+ 4a2:	dc 2f       	mov	r29, r28
+ 4a4:	cc 27       	eor	r28, r28
+		data+=TWDR;
+ 4a6:	f8 01       	movw	r30, r16
+ 4a8:	80 81       	ld	r24, Z
+ 4aa:	c8 0f       	add	r28, r24
+ 4ac:	d1 1d       	adc	r29, r1
+		I2C_COMAND(I2C_STOP); 	
+ 4ae:	82 e0       	ldi	r24, 0x02	; 2
+ 4b0:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+ 4b4:	8f e1       	ldi	r24, 0x1F	; 31
+ 4b6:	9e e4       	ldi	r25, 0x4E	; 78
+ 4b8:	01 97       	sbiw	r24, 0x01	; 1
+ 4ba:	f1 f7       	brne	.-4      	; 0x4b8 <READ_REGISTER+0x52>
+ 4bc:	00 c0       	rjmp	.+0      	; 0x4be <READ_REGISTER+0x58>
+ 4be:	00 00       	nop
+//	}
+
+	_delay_ms(10);
+	return (data);
+}
+ 4c0:	ce 01       	movw	r24, r28
+ 4c2:	df 91       	pop	r29
+ 4c4:	cf 91       	pop	r28
+ 4c6:	1f 91       	pop	r17
+ 4c8:	0f 91       	pop	r16
+ 4ca:	08 95       	ret
+
+000004cc <WRITE_REGISTER>:
+
+
+void WRITE_REGISTER(uint16_t data)
+{
+ 4cc:	0f 93       	push	r16
+ 4ce:	1f 93       	push	r17
+ 4d0:	cf 93       	push	r28
+ 4d2:	df 93       	push	r29
+ 4d4:	08 2f       	mov	r16, r24
+ 4d6:	19 2f       	mov	r17, r25
+ 4d8:	8f e1       	ldi	r24, 0x1F	; 31
+ 4da:	9e e4       	ldi	r25, 0x4E	; 78
+ 4dc:	01 97       	sbiw	r24, 0x01	; 1
+ 4de:	f1 f7       	brne	.-4      	; 0x4dc <WRITE_REGISTER+0x10>
+ 4e0:	00 c0       	rjmp	.+0      	; 0x4e2 <WRITE_REGISTER+0x16>
+ 4e2:	00 00       	nop
+	_delay_ms(10);
+
+	I2C_COMAND(I2C_START);       // формируем сигнал START
+ 4e4:	80 e0       	ldi	r24, 0x00	; 0
+ 4e6:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+
+	TWDR=WRITE_CMD;              // Загружаем адрес МС (WRITE)
+ 4ea:	c3 e7       	ldi	r28, 0x73	; 115
+ 4ec:	d0 e0       	ldi	r29, 0x00	; 0
+ 4ee:	80 e4       	ldi	r24, 0x40	; 64
+ 4f0:	88 83       	st	Y, r24
+	I2C_COMAND(I2C_TRANSMIT);    // Передаем
+ 4f2:	83 e0       	ldi	r24, 0x03	; 3
+ 4f4:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+	
+	TWDR=(uint8_t)(data & 0xFF);                  // Загружаем 8 младших бит данных в регистр 
+ 4f8:	08 83       	st	Y, r16
+	I2C_COMAND(I2C_TRANSMIT);   // Передаем
+ 4fa:	83 e0       	ldi	r24, 0x03	; 3
+ 4fc:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+	
+	TWDR=(uint8_t)(data >> 8);                  // Загружаем 8 старших бит данных в регистр  !!! 
+ 500:	18 83       	st	Y, r17
+	I2C_COMAND(I2C_TRANSMIT);   // Передаем
+ 502:	83 e0       	ldi	r24, 0x03	; 3
+ 504:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+
+	I2C_COMAND(I2C_STOP);        //Формируем сигнал STOP
+ 508:	82 e0       	ldi	r24, 0x02	; 2
+ 50a:	0e 94 01 02 	call	0x402	; 0x402 <I2C_COMAND>
+ 50e:	8f e1       	ldi	r24, 0x1F	; 31
+ 510:	9e e4       	ldi	r25, 0x4E	; 78
+ 512:	01 97       	sbiw	r24, 0x01	; 1
+ 514:	f1 f7       	brne	.-4      	; 0x512 <WRITE_REGISTER+0x46>
+ 516:	00 c0       	rjmp	.+0      	; 0x518 <WRITE_REGISTER+0x4c>
+ 518:	00 00       	nop
+	_delay_ms(10);
+}
+ 51a:	df 91       	pop	r29
+ 51c:	cf 91       	pop	r28
+ 51e:	1f 91       	pop	r17
+ 520:	0f 91       	pop	r16
+ 522:	08 95       	ret
+
+00000524 <Timer_Start>:
+
+
+uint8_t rx_done (void)       // Вернуть готов ли кадр к тому чтобы его забрали из буфера
+{
+ return (done);	
+}
+ 524:	8e b5       	in	r24, 0x2e	; 46
+ 526:	80 7e       	andi	r24, 0xE0	; 224
+ 528:	8e bd       	out	0x2e, r24	; 46
+ 52a:	1d bc       	out	0x2d, r1	; 45
+ 52c:	1c bc       	out	0x2c, r1	; 44
+ 52e:	1b bc       	out	0x2b, r1	; 43
+ 530:	1a bc       	out	0x2a, r1	; 42
+ 532:	87 b7       	in	r24, 0x37	; 55
+ 534:	88 7d       	andi	r24, 0xD8	; 216
+ 536:	87 bf       	out	0x37, r24	; 55
+ 538:	86 b7       	in	r24, 0x36	; 54
+ 53a:	80 61       	ori	r24, 0x10	; 16
+ 53c:	86 bf       	out	0x36, r24	; 54
+ 53e:	8e b5       	in	r24, 0x2e	; 46
+ 540:	88 60       	ori	r24, 0x08	; 8
+ 542:	8e bd       	out	0x2e, r24	; 46
+ 544:	87 b7       	in	r24, 0x37	; 55
+ 546:	80 61       	ori	r24, 0x10	; 16
+ 548:	87 bf       	out	0x37, r24	; 55
+ 54a:	8e e1       	ldi	r24, 0x1E	; 30
+ 54c:	8b bd       	out	0x2b, r24	; 43
+ 54e:	84 e8       	ldi	r24, 0x84	; 132
+ 550:	8a bd       	out	0x2a, r24	; 42
+ 552:	8e b5       	in	r24, 0x2e	; 46
+ 554:	84 60       	ori	r24, 0x04	; 4
+ 556:	8e bd       	out	0x2e, r24	; 46
+ 558:	08 95       	ret
+
+0000055a <Timer_Stop>:
+ 55a:	8e b5       	in	r24, 0x2e	; 46
+ 55c:	80 7e       	andi	r24, 0xE0	; 224
+ 55e:	8e bd       	out	0x2e, r24	; 46
+ 560:	1d bc       	out	0x2d, r1	; 45
+ 562:	1c bc       	out	0x2c, r1	; 44
+ 564:	87 b7       	in	r24, 0x37	; 55
+ 566:	88 7d       	andi	r24, 0xD8	; 216
+ 568:	87 bf       	out	0x37, r24	; 55
+ 56a:	86 b7       	in	r24, 0x36	; 54
+ 56c:	80 61       	ori	r24, 0x10	; 16
+ 56e:	86 bf       	out	0x36, r24	; 54
+ 570:	1b bc       	out	0x2b, r1	; 43
+ 572:	1a bc       	out	0x2a, r1	; 42
+ 574:	08 95       	ret
+
+00000576 <rx_clear>:
+
+
+void rx_clear (void)        // Очистить буфер приёма
+{
+ for (uint8_t i=0; i<LEN; i++) buffer[i]='0';   // Очистка буфера кадра	
+ 576:	80 e0       	ldi	r24, 0x00	; 0
+ 578:	07 c0       	rjmp	.+14     	; 0x588 <rx_clear+0x12>
+ 57a:	e8 2f       	mov	r30, r24
+ 57c:	f0 e0       	ldi	r31, 0x00	; 0
+ 57e:	ec 5f       	subi	r30, 0xFC	; 252
+ 580:	fe 4f       	sbci	r31, 0xFE	; 254
+ 582:	90 e3       	ldi	r25, 0x30	; 48
+ 584:	90 83       	st	Z, r25
+ 586:	8f 5f       	subi	r24, 0xFF	; 255
+ 588:	8c 30       	cpi	r24, 0x0C	; 12
+ 58a:	b8 f3       	brcs	.-18     	; 0x57a <rx_clear+0x4>
+ IDX=0;
+ 58c:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <IDX>
+ done=0;
+ 590:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <done>
+ 594:	08 95       	ret
+
+00000596 <__vector_12>:
+	OCR1AL = 0x00;
+}
+
+
+ISR (TIMER1_COMPA_vect)    // Таймер, прерывание раз в 0.1 секунды
+{
+ 596:	1f 92       	push	r1
+ 598:	0f 92       	push	r0
+ 59a:	0f b6       	in	r0, 0x3f	; 63
+ 59c:	0f 92       	push	r0
+ 59e:	11 24       	eor	r1, r1
+ 5a0:	2f 93       	push	r18
+ 5a2:	3f 93       	push	r19
+ 5a4:	4f 93       	push	r20
+ 5a6:	5f 93       	push	r21
+ 5a8:	6f 93       	push	r22
+ 5aa:	7f 93       	push	r23
+ 5ac:	8f 93       	push	r24
+ 5ae:	9f 93       	push	r25
+ 5b0:	af 93       	push	r26
+ 5b2:	bf 93       	push	r27
+ 5b4:	ef 93       	push	r30
+ 5b6:	ff 93       	push	r31
+	Timer_Stop();          // Сброс таймера
+ 5b8:	0e 94 ad 02 	call	0x55a	; 0x55a <Timer_Stop>
+    rx_clear();            // Очистка буфера
+ 5bc:	0e 94 bb 02 	call	0x576	; 0x576 <rx_clear>
+}
+ 5c0:	ff 91       	pop	r31
+ 5c2:	ef 91       	pop	r30
+ 5c4:	bf 91       	pop	r27
+ 5c6:	af 91       	pop	r26
+ 5c8:	9f 91       	pop	r25
+ 5ca:	8f 91       	pop	r24
+ 5cc:	7f 91       	pop	r23
+ 5ce:	6f 91       	pop	r22
+ 5d0:	5f 91       	pop	r21
+ 5d2:	4f 91       	pop	r20
+ 5d4:	3f 91       	pop	r19
+ 5d6:	2f 91       	pop	r18
+ 5d8:	0f 90       	pop	r0
+ 5da:	0f be       	out	0x3f, r0	; 63
+ 5dc:	0f 90       	pop	r0
+ 5de:	1f 90       	pop	r1
+ 5e0:	18 95       	reti
+
+000005e2 <__vector_30>:
+ done=0;
+}
+
+
+ISR(USART1_RX_vect)         // Прерывание UART1 по приёму
+{
+ 5e2:	1f 92       	push	r1
+ 5e4:	0f 92       	push	r0
+ 5e6:	0f b6       	in	r0, 0x3f	; 63
+ 5e8:	0f 92       	push	r0
+ 5ea:	11 24       	eor	r1, r1
+ 5ec:	2f 93       	push	r18
+ 5ee:	3f 93       	push	r19
+ 5f0:	4f 93       	push	r20
+ 5f2:	5f 93       	push	r21
+ 5f4:	6f 93       	push	r22
+ 5f6:	7f 93       	push	r23
+ 5f8:	8f 93       	push	r24
+ 5fa:	9f 93       	push	r25
+ 5fc:	af 93       	push	r26
+ 5fe:	bf 93       	push	r27
+ 600:	cf 93       	push	r28
+ 602:	ef 93       	push	r30
+ 604:	ff 93       	push	r31
+	char bf= UDR1;
+ 606:	c0 91 9c 00 	lds	r28, 0x009C	; 0x80009c <__TEXT_REGION_LENGTH__+0x7f009c>
+	buffer[IDX]=bf;
+ 60a:	e0 91 02 01 	lds	r30, 0x0102	; 0x800102 <IDX>
+ 60e:	f0 e0       	ldi	r31, 0x00	; 0
+ 610:	ec 5f       	subi	r30, 0xFC	; 252
+ 612:	fe 4f       	sbci	r31, 0xFE	; 254
+ 614:	c0 83       	st	Z, r28
+	IDX++;
+ 616:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <IDX>
+ 61a:	8f 5f       	subi	r24, 0xFF	; 255
+ 61c:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <IDX>
+	Timer_Start();
+ 620:	0e 94 92 02 	call	0x524	; 0x524 <Timer_Start>
+
+	if (bf == 0x0A || IDX >= LEN)
+ 624:	ca 30       	cpi	r28, 0x0A	; 10
+ 626:	21 f0       	breq	.+8      	; 0x630 <__vector_30+0x4e>
+ 628:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <IDX>
+ 62c:	8c 30       	cpi	r24, 0x0C	; 12
+ 62e:	38 f0       	brcs	.+14     	; 0x63e <__vector_30+0x5c>
+	{
+		IDX=0;
+ 630:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <IDX>
+		done=1;
+ 634:	81 e0       	ldi	r24, 0x01	; 1
+ 636:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <done>
+		Timer_Stop();
+ 63a:	0e 94 ad 02 	call	0x55a	; 0x55a <Timer_Stop>
+	}
+
+}
+ 63e:	ff 91       	pop	r31
+ 640:	ef 91       	pop	r30
+ 642:	cf 91       	pop	r28
+ 644:	bf 91       	pop	r27
+ 646:	af 91       	pop	r26
+ 648:	9f 91       	pop	r25
+ 64a:	8f 91       	pop	r24
+ 64c:	7f 91       	pop	r23
+ 64e:	6f 91       	pop	r22
+ 650:	5f 91       	pop	r21
+ 652:	4f 91       	pop	r20
+ 654:	3f 91       	pop	r19
+ 656:	2f 91       	pop	r18
+ 658:	0f 90       	pop	r0
+ 65a:	0f be       	out	0x3f, r0	; 63
+ 65c:	0f 90       	pop	r0
+ 65e:	1f 90       	pop	r1
+ 660:	18 95       	reti
+
+00000662 <_exit>:
+ 662:	f8 94       	cli
+
+00000664 <__stop_program>:
+ 664:	ff cf       	rjmp	.-2      	; 0x664 <__stop_program>
